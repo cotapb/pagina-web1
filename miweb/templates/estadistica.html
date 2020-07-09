@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html leng='es' style='height: 100%;'>
+<head>
+    <title> MBM-19 </title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}" >
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+</head> 
+<body style="background-color: rgb(221, 209, 209);">
+    <nav>
+      
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">BMB-19</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="{% url 'index' %}">Inicio</a></li>
+          <li><a href="{% url 'pregunta' %}">Preguntas</a></li>
+          <li class="active"><a href="{% url 'estadistica' %}">Estadística</a></li>
+          <li><a href="{% url 'informacion' %}">Información</a></li>
+        </ul>
+      </div>
+    </nav>             
+ <main>
+    <div>
+     <h1>Resultados</h1>
+ </div>
+ <div class="container">
+     <div class="row">
+         <div class="card panel">
+             <h3>Tienes{{total}} de los 14 sintomas del Covid-19</h3>
+             {% if total >8 %}
+             <p>Tienes muchos sintomas</p>
+             {% elif 9 > total > 5 %}
+             <h3>Tienes bastantes sintomas</h3>
+             {% else %}
+             <h3>Tiene muy pocos sintomas</h3>
+             {% endif %}
+             <form action="" method="POST">
+                 {% csrf_token %}
+                 <input type="hidden" name="edad" value="{{edad}}">
+                 <input type="hidden" name="sexo" value="{{sexo}}">
+                 <input type="hidden" name="region" value="{{region}}">
+                 <input type="hidden" name="contacto" value="{{contacto}}">
+                 <input type="hidden" name="total" value="{{total}}">
+                 <button  type="submit" value="sunmit">Presiona para enviarnos</button>
+             </form>
+         </div>
+     </div>
+ </div>
+</main>

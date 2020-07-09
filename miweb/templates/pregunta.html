@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html leng='es' style='height: 100%;'>
+  <script>
+    $(document).ready(function(){
+        $('select').formSelect();
+    });
+</script>
+<head>
+    <title> MBM-19 </title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}" >
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+</head> 
+
+<body style="background-color: rgb(221, 209, 209);">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">BMB-19</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="{% url 'index' %}">Inicio</a></li>
+        <li class="active"><a href="{% url 'pregunta' %}">Preguntas</a></li>
+        <li><a href="{% url 'estadistica' %}">Estadística</a></li>
+        <li><a href="{% url 'informacion' %}">Información</a></li>
+      </nav>  
+    </body>
+   
+    <div>
+      <h2>Test Diagnostico</h2>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="card panel">
+          <h4 class="center">Complete el formulario</h4>
+          <form action="pregunta1?sexo=sexo?fecha=fecha?region=region">
+            {% csrf_token %}
+              <label>
+                <input class="whit-gap" name="sexo" type="radio" value="Hombre" required>
+                <span>Hombre</span>
+              </label>
+              <label>
+                <input class="whit-gap" name="sexo" type="radio" value="Mujer">
+                <span>Mujer</span>
+              </label>
+            </p>
+            <h6>Edad:</h6>
+            <input class="whit-gap" name="edad" type="number" id="edad" min="0" max="120" required>
+            <h6>REGION</h6>    
+            <div class="input-field">
+              <select id='region' name='region' id="region">
+                <option value="" disabled selected>Seleccione una región...</option>
+                <option value="de Tarapacá">Tarapacá</option>
+                <option value="de Antofagasta">Antofagasta</option>
+                <option value="de Atacama">Atacama</option>
+                <option value="de Coquimbo">Coquimbo</option>
+                <option value="de Valparaíso">Valparaíso</option>
+                <option value="del Libertador General Bernardo O’Higgins">Libertador General Bernardo O’Higgins</option>
+                <option value="del Maule">Maule</option>
+                <option value="del Biobío">Biobío</option>
+                <option value="de La Araucanía">La Araucanía</option>
+                <option value="de Los Lagos">Los Lagos</option>
+                <option value="de Aysén del General Carlos Ibañez del Campo"> Aysén del General Carlos Ibañez del Campo</option>
+                <option value="de Magallanes y de la Antártica Chilena">Magallanes y de la Antártica Chilena</option>
+                <option value="Metropolitana de Santiago">Metropolitana de Santiago</option>
+                <option value="de Los Ríos">Los Ríos</option>
+                <option value="de Arica y Parinacota">Arica y Parinacota</option>
+                <option value="del Ñuble">Ñuble</option>
+              </select>   
+         
+               
+            <div>
+              <button style="text-align: center;" type="submit" value='Submit'>Enviar</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>

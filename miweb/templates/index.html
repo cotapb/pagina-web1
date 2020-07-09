@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html leng='es' style='height: 100%;'>
+<head>
+    <title> MBM-19 </title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}" >
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+</head> 
+<body style="background-color: rgb(221, 209, 209);">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">BMB-19</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li class="active"><a href="#">Inicio</a></li>
+        <li><a href="{% url 'pregunta' %}">Preguntas</a></li>
+        <li><a href="{% url 'estadistica' %}">Estadística</a></li>
+        <li><a href="{% url 'informacion' %}">Información</a></li>
+      </ul>
+    </div>
+  </nav>
+</body>
+
+  
+  <div class="container">
+        <div class="=row">
+            
+            <div class='col s12'>
+                <h1 style='text-align: center;'>¿Quieres saber que tan probable es que tengas Covid-19?</h1>
+            </div>
+            <div class="col s12">
+                
+            </div>
+
+            <div class="col s12 center-align">
+                <img src="{% static 'img/Coronavirus.jpg' %}" height='300'/>
+           
+            
+                
+            </div>
+              <div class="col s12 center-align">
+                <a style="background-color:rgba(226, 44, 44, 0.897);" href="{% url 'pregunta' %}" class="waves-effect waves-light btn">Si</a>
+                <a style="background-color:rgba(226, 44, 44, 0.897);" href="{% url 'informacion' %}" class="waves-effect waves-light btn">No</a>  
+            </div>
+        </div>
+        
+      </div>
+
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html leng='es' style='height: 100%;'>
+<head>
+    <title> MBM-19 </title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}" >
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+</head> 
+<body style="background-color: rgb(221, 209, 209);">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">BMB-19</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="{% url 'index' %}">Inicio</a></li>
+          <li><a href="{% url 'pregunta' %}">Preguntas</a></li>
+          <li><a href="{% url 'estadistica' %}">Estadística</a></li>
+          <li class="active"><a href="{% url 'informacion' %}">Información</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="col s12 center-align">
+        <a style="background-color:rgba(226, 44, 44, 0.897);" href="https://www.gob.cl/coronavirus/?gclid=CjwKCAjw_-D3BRBIEiwAjVMy7LH1Xx3g0c1YYCTMgHNpOnyGyT2BOlv9wIK3ghIW1KJrP21BynK_KxoCAsgQAvD_BwE" class="waves-effect waves-light btn">Para más Información</a>
+   
+    </div>
+</body>

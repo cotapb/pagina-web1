@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html leng='es' style='height: 100%;'>
+    
+<main>
+    <script>
+        $(document).ready(function(){
+          $('.modal').modal();
+          $('select').formSelect();
+        });
+      </script>
+<div class="card-panel center-align">
+        <h2>Test Diagnostico</h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="card-panel center">
+                <form action="estadistica">
+                    {% csrf_token %}
+                    <h3>Sintomas</h3>
+                    {% for sintomas in sintomas %}
+                      <div class="card-panel center-align">
+                        <h3>{{sintoma.nombre}}</h3>
+                        <p>
+                            <label class="">
+                                <input class="with-gap" name="{{sintomas.nombre}}" type="radio" value="1" required>
+                                <span>Si</span>
+                            </label>
+                            <label class="">
+                                <input class="with-gap" name="{{sintomas.nombre}}" type="radio" value="0">
+                                <span>No</span>
+                            </label>
+                        </p>
+                    </div>
+                    {% endfor %}
+                    <input type="hidden" name="edad" value="{{edad}}">
+                    <input type="hidden" name="sexo" value="{{sexo}}">
+                    <input type="hidden" name="region" value="{{region}}">
+                    <input type="hidden" name="contacto" value="{{contacto}}">
+                    <button class="center-align" type="submit">finalizar</button> 
+                </form>
+            </div>
+        </div>
+    </div>
+
+</main>
+

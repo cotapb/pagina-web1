@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html leng='es' style='height: 100%;'>
+
+
+<div style="text-align: center;">
+    <h2 style="text-align: center;">Test Diagnostico</h2>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="card panel">
+        <form method="GET" action="preguntas">
+          <h3>Actv reciente</h3>
+          <p>
+            <label>
+              <input class="whit-gap" name="contacto" type="radio" value="Si" required>
+              <span>He tenido contacto con alguien cercano</span>
+            </label>
+            <label>
+              <input class="whit-gap" name="contacto" type="radio" value="No">
+              <span>No he tenido contacto</span>
+            </label>
+          </p>
+          <input type="hidden" name="edad" value="{{edad}}">
+          <input type="hidden" name="sexo" value="{{sexo}}">
+          <input type="hidden" name="region" value="{{region}}">
+          <button class="center-align" type="submit">Siguiente</button> 
+        </form>
+      </div>
+    </div>
+  </div>
